@@ -5,7 +5,6 @@ pipeline {
       steps {
         sh 'chmod 777 ./jenkins/testbuild.sh'
       }
-      
     }
   }
 }
