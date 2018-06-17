@@ -7,7 +7,7 @@ pipeline {
       }
       post {
         always {
-          archiveArtifacts(artifacts: *build/report/*.jar*, fingerprint: true)
+          archiveArtifacts(artifacts: '*build/report/*.jar', fingerprint: true)
           junit 'build/report/*.xml'
 
         }
