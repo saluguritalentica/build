@@ -1,18 +1,22 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        sh 'chmod 777 ./jenkins/testbuild.sh'
-      }
-      post {
-        always {
-          archiveArtifacts(artifacts: '*build/report/*.jar', fingerprint: true)
-          junit 'build/report/*.xml'
-
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh './gradlew build'
+            }
         }
-
-      }
+        stage('Test') {
+            steps {
+                sh './gradlew check'
+            }
+        }
     }
-  }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+            junit 'build/reports/**/*.xml'
+        }
+    }
 }
