@@ -5,11 +5,13 @@ pipeline {
       steps {
         sh 'chmod 777 ./jenkins/testbuild.sh'
       }
-	  post {
+      post {
         always {
-            junit 'build/reports/results.xml'
+          junit 'build/reports/results.xml'
+
         }
-    }
+
+      }
     }
   }
 }
