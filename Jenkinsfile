@@ -4,9 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         sh 'chmod 777 ./jenkins/testbuild.sh'
-        archiveArtifacts(fingerprint: true, artifacts: 'build/libs/**/*.jar')
+        junit(testResults: 'build/report/test.xml', allowEmptyResults: true)
       }
-      
     }
   }
 }
