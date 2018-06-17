@@ -7,7 +7,7 @@ pipeline {
       }
       post {
         always {
-          junit 'build/report/test.xml'
+          junit '/var/lib/jenkins/workspace/*.xml'
 
         }
 
