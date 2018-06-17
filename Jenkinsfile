@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'chmod 777 ./jenkins/testbuild.sh'
-        junit(testResults: 'build/report/test.xml', allowEmptyResults: true)
+        junit 'build/report/test.xml'
       }
     }
   }
