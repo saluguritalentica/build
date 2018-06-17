@@ -14,6 +14,7 @@ pipeline {
     stage('result') {
       steps {
         junit(testResults: 'build/report/test.xml', allowEmptyResults: true)
+        archiveArtifacts(artifacts: 'build/libs/test.jar', allowEmptyArchive: true)
       }
     }
   }
