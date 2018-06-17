@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh './gradlew build'
+        sh 'chmod 755 ./jenkins/testbuild.sh'
       }
     }
     stage('Test') {
       steps {
-        sh './gradlew check'
+        sh './jenkins/testbuild.sh'
       }
     }
   }
