@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Test') {
+    stage('Build') {
       steps {
-        echo 'hello'
+        sh 'chmod 755 ./jenkins/testbuild.sh'
       }
     }
   }
