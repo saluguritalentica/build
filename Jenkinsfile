@@ -4,6 +4,10 @@ pipeline {
     stage('Build') {
       steps {
         sh 'chmod 755 ./jenkins/testbuild.sh'
+      }
+    }
+    stage('Test') {
+      steps {
         sh './jenkins/testbuild.sh'
       }
     }
