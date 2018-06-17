@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'chmod 755 ./jenkins/testbuild.sh'
-        sh 'chmod 755 /reports/'
+        sh 'chmod 755 /reports/test.xml'
       }
     }
   }
